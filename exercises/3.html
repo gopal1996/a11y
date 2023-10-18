@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Screen Reader</title>
+  </head>
+  <body>
+    <h1>Aria live</h1>
+    <p>Change between polite and assertive</p>
+    <div>
+      You have
+      <div aria-live="assertive" id="counter">0</div>
+      many days
+    </div>
+    <script>
+      function makeTimout() {
+        var number = Math.floor(Math.random() * 10) + 1;
+        setInterval(() => {
+          var counter = document.getElementById("counter");
+          counter.innerText = parseInt(counter.innerText, 10) + 1;
+          makeTimeout();
+        }, number + "00");
+      }
+
+      makeTimout();
+    </script>
+  </body>
+</html>
